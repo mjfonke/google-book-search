@@ -5,9 +5,8 @@ import { Container, Row, Col } from "../Components/Grid";
 import Form from "../Components/Form";
 import Results from "../Components/Results";
 
-
-
 class Search extends Component {
+   
     state = {
         search: "",
         books: [],
@@ -15,8 +14,9 @@ class Search extends Component {
         message: ""
     };
 
+
     handleInputChange = event => {
-        this.setSTate({ search: event.target.value })
+        this.setState({ search: event.target.value })
     }
 
     handleFormSubmit = event => {
@@ -51,9 +51,11 @@ class Search extends Component {
 
     handleSavedButton = event => {
         event.preventDefault();
+        console.log(this.state.books)
         let savedBooks = this.state.books.filter(book => book.id === event.target.id)
         savedBooks = savedBooks[0];
         API.saveBook(savedBooks)
+        .then(console.log("Book is saved"))
         .catch(err => console.log(err))
     }
 
@@ -62,7 +64,7 @@ class Search extends Component {
             <Container fluid>
                 <Jumbotron>
                     <h1 className="text-center">Google Book Search</h1>
-                    <p>Find Your Favorite Books Here</p>
+                    <p className="text-center">Find Your Favorite Books Here</p>
                 </Jumbotron>
                 <Container>
                     <Row>
@@ -77,7 +79,8 @@ class Search extends Component {
 
                 <Container>
                     <Results 
-                    books={this.state.books} handleSavedButton = {this.handleSavedButton} 
+                    books={this.state.books} 
+                    handleSavedButton = {this.handleSavedButton} 
                     />
                 </Container>
 

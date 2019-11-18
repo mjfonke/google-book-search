@@ -24,7 +24,10 @@ class Saved extends Component {
     render() {
         return (
             <Container fluid>
-                <Jumbotron />
+                <Jumbotron>
+                <h1 className="text-center">Google Book Search</h1>
+                <p className="text-center">Here are your saved books</p>
+                </Jumbotron>
                 <Container>
                     <SavedResults 
                     savedBooks={this.state.savedBooks}

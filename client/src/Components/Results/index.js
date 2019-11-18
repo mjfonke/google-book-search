@@ -23,11 +23,11 @@ function Results (props) {
                     </Row>
 
                     <Row className="row">
-                        <button className="btn btn-primary" id={book.id} onClick={(event) => props.handleSavedButton(event)}>
+                        <button className="btn btn-success float-right" id={book.id} onClick={(event) => props.handleSavedButton(event)}>
                            Save
                         </button>
                         <a href={book.link}>
-                            <button className="btn btn-primary">
+                            <button className="btn btn-success ml-2 float-right">
                                 View
                             </button>
                         </a>
