@@ -49,11 +49,12 @@ class Search extends Component {
         .catch(err => this.setState({ error: err.items }));
     }
 
-    handleSavedButton = event => {
-        event.preventDefault();
+    handleSavedButton = id => {
+        
         console.log(this.state.books)
-        const savedBooks = this.state.books.find(book => book.event === event);
+        const savedBooks = this.state.books.find(book => book.id === id);
         console.log(API.saveBook)
+        console.log(savedBooks)
         API.saveBook(savedBooks)
         .then(console.log("Book is saved"))
         .catch(err => console.log(err))

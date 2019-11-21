@@ -23,7 +23,7 @@ function Results (props) {
                     </Row>
 
                     <Row className="row">
-                        <button className="btn btn-success float-right" id={book.id} onClick={(event) => props.handleSavedButton(event)}>
+                        <button className="btn btn-success float-right" data-id={book.id} onClick={() => props.handleSavedButton(book.id)}>
                            Save
                         </button>
                         <a href={book.link}>
