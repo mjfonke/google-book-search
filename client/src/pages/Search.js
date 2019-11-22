@@ -57,7 +57,7 @@ class Search extends Component {
         console.log(API.saveBook)
         console.log(savedBooks)
         API.saveBook(savedBooks)
-        .then(console.log("Book is saved"))
+        .then(res => alert("This book is saved!"))
         .catch(err => console.log(err))
     }
 
