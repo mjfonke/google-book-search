@@ -9,10 +9,6 @@ export default {
         return axios.get("/api/books");
     },
 
-    getOneBook: function(id) {
-        return axios.get(`/api/books/${id}`);
-    },
-
     saveBook: function (bookData) {
         return axios.post("/api/books", bookData);
     },

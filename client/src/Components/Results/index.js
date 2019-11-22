@@ -11,7 +11,7 @@ function Results (props) {
             {props.books.map(book => {
                 return (
                 <li className="list-group-item">
-                    <Row className="row" id={book.title + "Card"} key={book._id}>
+                    <Row className="row" id={book.title + "Card"} key={book.id}>
                         <Col size="2" className="bookImage">
                             <img src={book.image} alt={book.title} />
                         </Col>

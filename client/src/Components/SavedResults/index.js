@@ -24,9 +24,8 @@ function SavedResults (props) {
                     </Col>
                     </Row>
 
-
                     <Row className="row">
-                        <button className="deleteBook btn btn-primary" id={saved.id} onClick={() => props.handleDeleteButton(saved._id)}>
+                        <button className="deleteBook btn btn-primary" data-id={saved._id} onClick={() => props.handleDeleteButton(saved._id)}>
                              Delete This Book
                         </button>
                         <a href={saved.link}>
